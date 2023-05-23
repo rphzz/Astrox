@@ -24,8 +24,9 @@ AstroxFling.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Frame.Parent = AstroxFling
 Frame.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
 Frame.BorderSizePixel = 0
+Frame.ClipsDescendants = true
 Frame.Position = UDim2.new(0.131327957, 0, 0.250617325, 0)
-Frame.Size = UDim2.new(0, 541, 0, 263)
+Frame.Size = UDim2.new(0, 454, 0, 220)
 
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
@@ -36,7 +37,8 @@ TextLabel.Parent = Frame_2
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.BorderSizePixel = 0
-TextLabel.Size = UDim2.new(0, 542, 0, 37)
+TextLabel.Position = UDim2.new(-0.00184842886, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 417, 0, 37)
 TextLabel.Font = Enum.Font.Gotham
 TextLabel.Text = "FE Fling GUI [Astro Edition]"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -80,7 +82,7 @@ TextLabel_2.TextSize = 14.000
 TextButton.Parent = Frame
 TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BackgroundTransparency = 1.000
-TextButton.Position = UDim2.new(0.937153399, 0, 0, 0)
+TextButton.Position = UDim2.new(0.921734929, 0, 0, 0)
 TextButton.Size = UDim2.new(0, 34, 0, 37)
 TextButton.Font = Enum.Font.Gotham
 TextButton.Text = "X"
@@ -91,7 +93,7 @@ AntiFlingButton.Name = "AntiFlingButton"
 AntiFlingButton.Parent = Frame
 AntiFlingButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
 AntiFlingButton.BorderSizePixel = 0
-AntiFlingButton.Position = UDim2.new(0.829920173, 0, 0.872144759, 0)
+AntiFlingButton.Position = UDim2.new(0.790272593, 0, 0.840326548, 0)
 AntiFlingButton.Size = UDim2.new(0, 92, 0, 33)
 AntiFlingButton.Font = Enum.Font.Gotham
 AntiFlingButton.Text = "Anti Fling"
@@ -100,7 +102,7 @@ AntiFlingButton.TextSize = 14.000
 
 -- Scripts:
 
-local function ZRVW_fake_script() -- TextLabel.RainbowText 
+local function LBWS_fake_script() -- TextLabel.RainbowText 
 	local script = Instance.new('Script', TextLabel)
 
 	local text = script.Parent
@@ -156,8 +158,8 @@ local function ZRVW_fake_script() -- TextLabel.RainbowText
 	end
 	end
 end
-coroutine.wrap(ZRVW_fake_script)()
-local function DZDZMN_fake_script() -- FlingButton.LocalScript 
+coroutine.wrap(LBWS_fake_script)()
+local function LBXW_fake_script() -- FlingButton.LocalScript 
 	local script = Instance.new('LocalScript', FlingButton)
 
 	function lol()
@@ -228,8 +230,8 @@ local function DZDZMN_fake_script() -- FlingButton.LocalScript
 		end
 	script.Parent.MouseButton1Click:Connect(lol)
 end
-coroutine.wrap(DZDZMN_fake_script)()
-local function PTZHSL_fake_script() -- TextBox.RainbowText 
+coroutine.wrap(LBXW_fake_script)()
+local function FLPXRQH_fake_script() -- TextBox.RainbowText 
 	local script = Instance.new('Script', TextBox)
 
 	local text = script.Parent
@@ -285,8 +287,8 @@ local function PTZHSL_fake_script() -- TextBox.RainbowText
 	end
 	end
 end
-coroutine.wrap(PTZHSL_fake_script)()
-local function PECPKS_fake_script() -- Frame.DraggableS 
+coroutine.wrap(FLPXRQH_fake_script)()
+local function VGKX_fake_script() -- Frame.DraggableS 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -343,8 +345,8 @@ local function PECPKS_fake_script() -- Frame.DraggableS
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(PECPKS_fake_script)()
-local function XRMBWP_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(VGKX_fake_script)()
+local function EVUI_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	function gay()
@@ -354,8 +356,8 @@ local function XRMBWP_fake_script() -- TextButton.LocalScript
 	end
 	script.Parent.MouseButton1Click:Connect(gay)
 end
-coroutine.wrap(XRMBWP_fake_script)()
-local function ICFJGYG_fake_script() -- AntiFlingButton.LocalScript 
+coroutine.wrap(EVUI_fake_script)()
+local function GSXZ_fake_script() -- AntiFlingButton.LocalScript 
 	local script = Instance.new('LocalScript', AntiFlingButton)
 
 	--[[
@@ -383,4 +385,4 @@ local function ICFJGYG_fake_script() -- AntiFlingButton.LocalScript
 		end
 	end)
 end
-coroutine.wrap(ICFJGYG_fake_script)()
+coroutine.wrap(GSXZ_fake_script)()
