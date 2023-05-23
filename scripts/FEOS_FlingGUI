@@ -102,7 +102,7 @@ AntiFlingButton.TextSize = 14.000
 
 -- Scripts:
 
-local function LBWS_fake_script() -- TextLabel.RainbowText 
+local function KSJFSO_fake_script() -- TextLabel.RainbowText 
 	local script = Instance.new('Script', TextLabel)
 
 	local text = script.Parent
@@ -158,8 +158,8 @@ local function LBWS_fake_script() -- TextLabel.RainbowText
 	end
 	end
 end
-coroutine.wrap(LBWS_fake_script)()
-local function LBXW_fake_script() -- FlingButton.LocalScript 
+coroutine.wrap(KSJFSO_fake_script)()
+local function SQYD_fake_script() -- FlingButton.LocalScript 
 	local script = Instance.new('LocalScript', FlingButton)
 
 	function lol()
@@ -230,8 +230,8 @@ local function LBXW_fake_script() -- FlingButton.LocalScript
 		end
 	script.Parent.MouseButton1Click:Connect(lol)
 end
-coroutine.wrap(LBXW_fake_script)()
-local function FLPXRQH_fake_script() -- TextBox.RainbowText 
+coroutine.wrap(SQYD_fake_script)()
+local function RCTN_fake_script() -- TextBox.RainbowText 
 	local script = Instance.new('Script', TextBox)
 
 	local text = script.Parent
@@ -287,8 +287,8 @@ local function FLPXRQH_fake_script() -- TextBox.RainbowText
 	end
 	end
 end
-coroutine.wrap(FLPXRQH_fake_script)()
-local function VGKX_fake_script() -- Frame.DraggableS 
+coroutine.wrap(RCTN_fake_script)()
+local function GMPTO_fake_script() -- Frame.DraggableS 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -345,8 +345,8 @@ local function VGKX_fake_script() -- Frame.DraggableS
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(VGKX_fake_script)()
-local function EVUI_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(GMPTO_fake_script)()
+local function ENITR_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	function gay()
@@ -356,38 +356,97 @@ local function EVUI_fake_script() -- TextButton.LocalScript
 	end
 	script.Parent.MouseButton1Click:Connect(gay)
 end
-coroutine.wrap(EVUI_fake_script)()
-local function GSXZ_fake_script() -- AntiFlingButton.LocalScript 
+coroutine.wrap(ENITR_fake_script)()
+local function NXPH_fake_script() -- AntiFlingButton.LocalScript 
 	local script = Instance.new('LocalScript', AntiFlingButton)
 
---[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
-_G.AntiFlingConfig = {
-    -- this will remove your rotational velocity every frame
-    disable_rotation = true;
-   
-    -- this slows you down if you're moving too fast, works well but can give you a low gravity effect
-    limit_velocity = true;
-    limit_velocity_sensitivity = 150; -- how fast you have to be moving before you get slowed down
-    limit_velocity_slow = 0; -- the amount of velocity you keep; a lower number increases how much you slow down by
-   
-    -- stops you from ragdolling or falling over and losing control
-    anti_ragdoll = true;
-   
-    -- completely freezes you if someone gets too close to you  
-    anchor = false;
-    smart_anchor = true; -- only anchors if someone is considered flinging, this likely won't detect many flings
-    anchor_dist = 30; -- how close someone has to be to trigger anchor
-   
-    -- teleport away if someone gets too close
-    teleport = false;
-    smart_teleport = true; -- only teleports if someone is considered flinging, this likely won't detect many flings
-    teleport_dist = 30; -- how close someone has to be to teleport you
-}
--- run _G.disable() to disable the script completely
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/topitbopit/rblx/main/extra/better_antifling.lua'))()
-	end)
+	function gayz()
+	
+	-- // Constants \\ --
+	-- [ Services ] --
+	local Services = setmetatable({}, {__index = function(Self, Index)
+		local NewService = game.GetService(game, Index)
+		if NewService then
+			Self[Index] = NewService
+		end
+		return NewService
+	end})
+	
+	-- [ LocalPlayer ] --
+	local LocalPlayer = Services.Players.LocalPlayer
+	
+	-- // Functions \\ --
+	local function PlayerAdded(Player)
+		local Detected = false
+		local Character;
+		local PrimaryPart;
+	
+		local function CharacterAdded(NewCharacter)
+			Character = NewCharacter
+			repeat
+				wait()
+				PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
+			until PrimaryPart
+			Detected = false
+		end
+	
+		CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
+		Player.CharacterAdded:Connect(CharacterAdded)
+		Services.RunService.Heartbeat:Connect(function()
+			if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
+				if PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
+					if Detected == false then
+						game.StarterGui:SetCore("ChatMakeSystemMessage", {
+							Text = "Fling Exploit detected, Player: " .. tostring(Player);
+							Color = Color3.fromRGB(255, 200, 0);
+						})
+					end
+					Detected = true
+					for i,v in ipairs(Character:GetDescendants()) do
+						if v:IsA("BasePart") then
+							v.CanCollide = false
+							v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+							v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+							v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+						end
+					end
+					PrimaryPart.CanCollide = false
+					PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+					PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+					PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+				end
+			end
+		end)
+	end
+	
+	-- // Event Listeners \\ --
+	for i,v in ipairs(Services.Players:GetPlayers()) do
+		if v ~= LocalPlayer then
+			PlayerAdded(v)
+		end
+	end
+	Services.Players.PlayerAdded:Connect(PlayerAdded)
+	
+	local LastPosition = nil
+	Services.RunService.Heartbeat:Connect(function()
+		pcall(function()
+			local PrimaryPart = LocalPlayer.Character.PrimaryPart
+			if PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 then
+				PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+				PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+				PrimaryPart.CFrame = LastPosition
+	
+				game.StarterGui:SetCore("ChatMakeSystemMessage", {
+					Text = "You were flung. Neutralizing velocity.";
+					Color = Color3.fromRGB(255, 0, 0);
+				})
+			elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
+				LastPosition = PrimaryPart.CFrame
+			end
+		end)
+		end)
+	end
+	
+	script.Parent.MouseButton1Click:Connect(gayz)
 end
-coroutine.wrap(GSXZ_fake_script)()
+coroutine.wrap(NXPH_fake_script)()
