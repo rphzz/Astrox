@@ -88,10 +88,10 @@ TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextSize = 14.000
 
 AntiFlingButton.Name = "AntiFlingButton"
-AntiFlingButton.Parent = AstroxFling
+AntiFlingButton.Parent = Frame
 AntiFlingButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
 AntiFlingButton.BorderSizePixel = 0
-AntiFlingButton.Position = UDim2.new(0.460234404, 0, 0.533741713, 0)
+AntiFlingButton.Position = UDim2.new(0.829920173, 0, 0.872144759, 0)
 AntiFlingButton.Size = UDim2.new(0, 92, 0, 33)
 AntiFlingButton.Font = Enum.Font.Gotham
 AntiFlingButton.Text = "Anti Fling"
@@ -100,7 +100,7 @@ AntiFlingButton.TextSize = 14.000
 
 -- Scripts:
 
-local function JBMBE_fake_script() -- TextLabel.RainbowText 
+local function ZRVW_fake_script() -- TextLabel.RainbowText 
 	local script = Instance.new('Script', TextLabel)
 
 	local text = script.Parent
@@ -156,8 +156,8 @@ local function JBMBE_fake_script() -- TextLabel.RainbowText
 	end
 	end
 end
-coroutine.wrap(JBMBE_fake_script)()
-local function PRPD_fake_script() -- FlingButton.LocalScript 
+coroutine.wrap(ZRVW_fake_script)()
+local function DZDZMN_fake_script() -- FlingButton.LocalScript 
 	local script = Instance.new('LocalScript', FlingButton)
 
 	function lol()
@@ -228,8 +228,8 @@ local function PRPD_fake_script() -- FlingButton.LocalScript
 		end
 	script.Parent.MouseButton1Click:Connect(lol)
 end
-coroutine.wrap(PRPD_fake_script)()
-local function DELRFA_fake_script() -- TextBox.RainbowText 
+coroutine.wrap(DZDZMN_fake_script)()
+local function PTZHSL_fake_script() -- TextBox.RainbowText 
 	local script = Instance.new('Script', TextBox)
 
 	local text = script.Parent
@@ -285,8 +285,8 @@ local function DELRFA_fake_script() -- TextBox.RainbowText
 	end
 	end
 end
-coroutine.wrap(DELRFA_fake_script)()
-local function GJUNHEE_fake_script() -- Frame.DraggableS 
+coroutine.wrap(PTZHSL_fake_script)()
+local function PECPKS_fake_script() -- Frame.DraggableS 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -343,16 +343,19 @@ local function GJUNHEE_fake_script() -- Frame.DraggableS
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(GJUNHEE_fake_script)()
-local function ZNDW_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(PECPKS_fake_script)()
+local function XRMBWP_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
-    function gay()
+
+	function gay()
+	
 	print("CALLED TO DESTROY AstroxFling GUI ! [workspace.StarterGui.AstroxFling ]")
-	script.Parent.Parent.Parent:Destroy()
+		script.Parent.Parent.Parent:Destroy()
+	end
 	script.Parent.MouseButton1Click:Connect(gay)
 end
-coroutine.wrap(ZNDW_fake_script)()
-local function LGCU_fake_script() -- AntiFlingButton.LocalScript 
+coroutine.wrap(XRMBWP_fake_script)()
+local function ICFJGYG_fake_script() -- AntiFlingButton.LocalScript 
 	local script = Instance.new('LocalScript', AntiFlingButton)
 
 	--[[
@@ -380,4 +383,4 @@ local function LGCU_fake_script() -- AntiFlingButton.LocalScript
 		end
 	end)
 end
-coroutine.wrap(LGCU_fake_script)()
+coroutine.wrap(ICFJGYG_fake_script)()
