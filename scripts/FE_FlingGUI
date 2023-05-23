@@ -1,1 +1,338 @@
-local a=Instance.new("ScreenGui")local b=Instance.new("Frame")local c=Instance.new("Frame")local d=Instance.new("TextLabel")local e=Instance.new("TextButton")local f=Instance.new("UICorner")local g=Instance.new("TextBox")local h=Instance.new("UICorner")local i=Instance.new("TextLabel")local j=Instance.new("TextButton")a.Name="AstroxFling"a.Parent=game:GetService("CoreGui")or gethui()a.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;b.Parent=a;b.BackgroundColor3=Color3.fromRGB(38,38,38)b.BorderSizePixel=0;b.Position=UDim2.new(0.131327957,0,0.250617325,0)b.Size=UDim2.new(0,541,0,263)c.Parent=b;c.BackgroundColor3=Color3.fromRGB(48,48,48)c.BorderSizePixel=0;c.Size=UDim2.new(0,541,0,36)d.Parent=c;d.BackgroundColor3=Color3.fromRGB(255,255,255)d.BackgroundTransparency=1.000;d.BorderSizePixel=0;d.Size=UDim2.new(0,542,0,37)d.Font=Enum.Font.Gotham;d.Text="FE Fling GUI [Astro Edition]"d.TextColor3=Color3.fromRGB(255,255,255)d.TextSize=14.000;e.Name="FlingButton"e.Parent=b;e.BackgroundColor3=Color3.fromRGB(47,47,47)e.Position=UDim2.new(0.314232916,0,0.730037987,0)e.Size=UDim2.new(0,200,0,33)e.Font=Enum.Font.Gotham;e.Text="Fling"e.TextColor3=Color3.fromRGB(255,255,255)e.TextSize=14.000;f.Parent=e;g.Parent=b;g.BackgroundColor3=Color3.fromRGB(52,52,52)g.Position=UDim2.new(0.290203333,0,0.441064626,0)g.Size=UDim2.new(0,228,0,34)g.Font=Enum.Font.Gotham;g.PlaceholderText="Username"g.Text=""g.TextColor3=Color3.fromRGB(0,0,0)g.TextSize=14.000;h.Parent=g;i.Parent=b;i.BackgroundColor3=Color3.fromRGB(255,255,255)i.BackgroundTransparency=1.000;i.BorderSizePixel=0;i.Position=UDim2.new(0.243992612,0,0.266159683,0)i.Size=UDim2.new(0,277,0,37)i.Font=Enum.Font.Gotham;i.Text="Insert the username [Can be shortened]"i.TextColor3=Color3.fromRGB(255,255,255)i.TextSize=14.000;j.Parent=b;j.BackgroundColor3=Color3.fromRGB(255,255,255)j.BackgroundTransparency=1.000;j.Position=UDim2.new(0.937153399,0,0,0)j.Size=UDim2.new(0,34,0,37)j.Font=Enum.Font.Gotham;j.Text="X"j.TextColor3=Color3.fromRGB(255,255,255)j.TextSize=14.000;local function k()local l=Instance.new('Script',d)local m=l.Parent;local n=10;wait(1)local o=1;while o<=255 do m.TextColor3=Color3.new(o/255,0/255,0/255)o=o+n;wait()end;while true do o=1;while o<=255 do m.TextColor3=Color3.new(255/255,o/255,0/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(255/255-o/255,255/255,0/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(0/255,255/255,o/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(0/255,255/255-o/255,255/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(o/255,0/255,255/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(255/255,0/255,255/255-o/255)o=o+n;wait()end;while o<=255 do m.TextColor3=Color3.new(255/255-o/255,0/255,0/255)o=o+n;wait()end end end;coroutine.wrap(k)()local function p()local l=Instance.new('LocalScript',e)function lol()local q=game:FindService("Players").LocalPlayer;local function r(s)local t={}local u=s:lower()if u=="all"then for v,w in pairs(game:FindService("Players"):GetPlayers())do table.insert(t,w)end elseif u=="others"then for v,w in pairs(game:FindService("Players"):GetPlayers())do if w.Name~=q.Name then table.insert(t,w)end end elseif u=="me"then for v,w in pairs(game:FindService("Players"):GetPlayers())do if w.Name==q.Name then table.insert(t,w)end end else for v,w in pairs(game:FindService("Players"):GetPlayers())do if w.Name:lower():sub(1,#s)==s:lower()then table.insert(t,w)end end end;return t end;local function x(y,z)game:FindService("StarterGui"):SetCore("SendNotification",{Title="Astro GUI",Text=y,Icon="rbxassetid://9585820180",Duration=z or 3})end;if l.Parent.Parent.TextBox.Text==""then x("Insert the username!")else local A=r(l.Parent.Parent.TextBox.Text)if A[1]then A=A[1]local B=Instance.new('BodyThrust',q.Character.HumanoidRootPart)B.Force=Vector3.new(9999,9999,9999)B.Name="YeetForce"repeat q.Character.HumanoidRootPart.CFrame=A.Character.HumanoidRootPart.CFrame;B.Location=A.Character.HumanoidRootPart.Position;game:FindService("RunService").Heartbeat:wait()until not A.Character:FindFirstChild("Head")else x("")end end end;l.Parent.MouseButton1Click:Connect(lol)end;coroutine.wrap(p)()local function C()local l=Instance.new('Script',g)local m=l.Parent;local n=10;wait(1)local o=1;while o<=255 do m.TextColor3=Color3.new(o/255,0/255,0/255)o=o+n;wait()end;while true do o=1;while o<=255 do m.TextColor3=Color3.new(255/255,o/255,0/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(255/255-o/255,255/255,0/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(0/255,255/255,o/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(0/255,255/255-o/255,255/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(o/255,0/255,255/255)o=o+n;wait()end;o=1;while o<=255 do m.TextColor3=Color3.new(255/255,0/255,255/255-o/255)o=o+n;wait()end;while o<=255 do m.TextColor3=Color3.new(255/255-o/255,0/255,0/255)o=o+n;wait()end end end;coroutine.wrap(C)()local function D()local l=Instance.new('LocalScript',b)local E=game:GetService("UserInputService")local F=game:GetService("RunService")local G=l.Parent;local H;local I;local J;local K;function Lerp(L,M,N)return L+(M-L)*N end;local O;local P;local Q=8;function Update(R)if not K then return end;if not H and P then G.Position=UDim2.new(K.X.Scale,Lerp(G.Position.X.Offset,P.X.Offset,R*Q),K.Y.Scale,Lerp(G.Position.Y.Offset,P.Y.Offset,R*Q))return end;local S=O-E:GetMouseLocation()local T=K.X.Offset-S.X;local U=K.Y.Offset-S.Y;P=UDim2.new(K.X.Scale,T,K.Y.Scale,U)G.Position=UDim2.new(K.X.Scale,Lerp(G.Position.X.Offset,T,R*Q),K.Y.Scale,Lerp(G.Position.Y.Offset,U,R*Q))end;G.InputBegan:Connect(function(V)if V.UserInputType==Enum.UserInputType.MouseButton1 or V.UserInputType==Enum.UserInputType.Touch then H=true;J=V.Position;K=G.Position;O=E:GetMouseLocation()V.Changed:Connect(function()if V.UserInputState==Enum.UserInputState.End then H=false end end)end end)G.InputChanged:Connect(function(V)if V.UserInputType==Enum.UserInputType.MouseMovement or V.UserInputType==Enum.UserInputType.Touch then I=V end end)F.Heartbeat:Connect(Update)end;coroutine.wrap(D)()local function W()local l=Instance.new('LocalScript',j)print("CALLED TO DESTROY AstroxFling GUI ! [workspace.StarterGui.AstroxFling ]")l.Parent.Parent.Parent:Destroy()end;coroutine.wrap(W)()
+--Open Source for you skidder lol
+
+local AstroxFling = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local FlingButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+AstroxFling.Name = "AstroxFling"
+AstroxFling.Parent = (game:GetService("CoreGui") or gethui())
+AstroxFling.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = AstroxFling
+Frame.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.131327957, 0, 0.250617325, 0)
+Frame.Size = UDim2.new(0, 541, 0, 263)
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+Frame_2.BorderSizePixel = 0
+Frame_2.Size = UDim2.new(0, 541, 0, 36)
+
+TextLabel.Parent = Frame_2
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 542, 0, 37)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "FE Fling GUI [Astro Edition]"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+FlingButton.Name = "FlingButton"
+FlingButton.Parent = Frame
+FlingButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+FlingButton.Position = UDim2.new(0.314232916, 0, 0.730037987, 0)
+FlingButton.Size = UDim2.new(0, 200, 0, 33)
+FlingButton.Font = Enum.Font.Gotham
+FlingButton.Text = "Fling"
+FlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlingButton.TextSize = 14.000
+
+UICorner.Parent = FlingButton
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+TextBox.Position = UDim2.new(0.290203333, 0, 0.441064626, 0)
+TextBox.Size = UDim2.new(0, 228, 0, 34)
+TextBox.Font = Enum.Font.Gotham
+TextBox.PlaceholderText = "Username"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+UICorner_2.Parent = TextBox
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.243992612, 0, 0.266159683, 0)
+TextLabel_2.Size = UDim2.new(0, 277, 0, 37)
+TextLabel_2.Font = Enum.Font.Gotham
+TextLabel_2.Text = "Insert the username [Can be shortened]"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14.000
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.Position = UDim2.new(0.937153399, 0, 0, 0)
+TextButton.Size = UDim2.new(0, 34, 0, 37)
+TextButton.Font = Enum.Font.Gotham
+TextButton.Text = "X"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 14.000
+
+-- Scripts:
+
+local function CIEZLR_fake_script() -- TextLabel.RainbowText 
+	local script = Instance.new('Script', TextLabel)
+
+	local text = script.Parent
+	local add = 10
+	wait(1)
+	local k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(k/255,0/255,0/255)
+	k = k + add
+	wait()
+	end
+	while true do
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255,k/255,0/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(0/255,255/255,k/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(k/255,0/255,255/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
+	k = k + add
+	wait()
+	end
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
+	k = k + add
+	wait()
+	end
+	end
+end
+coroutine.wrap(CIEZLR_fake_script)()
+local function EUDJ_fake_script() -- FlingButton.LocalScript 
+	local script = Instance.new('LocalScript', FlingButton)
+
+	function lol()
+	local lp = game:FindService("Players").LocalPlayer
+	
+	local function gplr(String)
+		local Found = {}
+		local strl = String:lower()
+		if strl == "all" then
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				table.insert(Found,v)
+			end
+		elseif strl == "others" then
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				if v.Name ~= lp.Name then
+					table.insert(Found,v)
+				end
+			end 
+		elseif strl == "me" then
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				if v.Name == lp.Name then
+					table.insert(Found,v)
+				end
+			end 
+		else
+			for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+				if v.Name:lower():sub(1, #String) == String:lower() then
+					table.insert(Found,v)
+				end
+			end 
+		end
+		return Found 
+	end
+	
+	local function notif(str,dur)
+		game:FindService("StarterGui"):SetCore("SendNotification", {
+			Title = "Astro GUI",
+			Text = str,
+				Icon = "rbxassetid://9585820180",
+			Duration = dur or 3
+		})
+	end
+	
+	--// sds
+	
+	
+	
+	if script.Parent.Parent.TextBox.Text == "" then
+		notif("Insert the username!")
+	else
+	
+		local Target = gplr(script.Parent.Parent.TextBox.Text)
+		if Target[1] then
+			Target = Target[1]
+	
+			local Thrust = Instance.new('BodyThrust', lp.Character.HumanoidRootPart)
+			Thrust.Force = Vector3.new(9999,9999,9999)
+			Thrust.Name = "YeetForce"
+			repeat
+				lp.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame
+				Thrust.Location = Target.Character.HumanoidRootPart.Position
+				game:FindService("RunService").Heartbeat:wait()
+			until not Target.Character:FindFirstChild("Head")
+		else
+			notif("")
+			end
+		end
+		end
+	script.Parent.MouseButton1Click:Connect(lol)
+end
+coroutine.wrap(EUDJ_fake_script)()
+local function UFLV_fake_script() -- TextBox.RainbowText 
+	local script = Instance.new('Script', TextBox)
+
+	local text = script.Parent
+	local add = 10
+	wait(1)
+	local k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(k/255,0/255,0/255)
+	k = k + add
+	wait()
+	end
+	while true do
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255,k/255,0/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(0/255,255/255,k/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(k/255,0/255,255/255)
+	k = k + add
+	wait()
+	end
+	k = 1
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
+	k = k + add
+	wait()
+	end
+	while k <= 255 do
+	text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
+	k = k + add
+	wait()
+	end
+	end
+end
+coroutine.wrap(UFLV_fake_script)()
+local function UXNSLOZ_fake_script() -- Frame.DraggableS 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+end
+coroutine.wrap(UXNSLOZ_fake_script)()
+local function HWOXUME_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	print("CALLED TO DESTROY AstroxFling GUI ! [workspace.StarterGui.AstroxFling ]")
+	script.Parent.Parent.Parent:Destroy()
+end
+coroutine.wrap(HWOXUME_fake_script)()
