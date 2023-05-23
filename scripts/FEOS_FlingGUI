@@ -26,7 +26,7 @@ Frame.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
 Frame.BorderSizePixel = 0
 Frame.ClipsDescendants = true
 Frame.Position = UDim2.new(0.131327957, 0, 0.250617325, 0)
-Frame.Size = UDim2.new(0, 454, 0, 220)
+Frame.Size = UDim2.new(0, 454, 0, 238)
 
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
@@ -38,7 +38,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(-0.00184842886, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 417, 0, 37)
+TextLabel.Size = UDim2.new(0, 456, 0, 37)
 TextLabel.Font = Enum.Font.Gotham
 TextLabel.Text = "FE Fling GUI [Astro Edition]"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -47,12 +47,13 @@ TextLabel.TextSize = 14.000
 FlingButton.Name = "FlingButton"
 FlingButton.Parent = Frame
 FlingButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-FlingButton.Position = UDim2.new(0.314232916, 0, 0.730037987, 0)
+FlingButton.Position = UDim2.new(0.320840836, 0, 0.65440774, 0)
 FlingButton.Size = UDim2.new(0, 200, 0, 33)
 FlingButton.Font = Enum.Font.Gotham
 FlingButton.Text = "Fling"
 FlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 FlingButton.TextSize = 14.000
+FlingButton.TextWrapped = true
 
 UICorner.Parent = FlingButton
 
@@ -72,8 +73,8 @@ TextLabel_2.Parent = Frame
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.BackgroundTransparency = 1.000
 TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.243992612, 0, 0.266159683, 0)
-TextLabel_2.Size = UDim2.new(0, 277, 0, 37)
+TextLabel_2.Position = UDim2.new(0.00170185918, 0, 0.266159743, 0)
+TextLabel_2.Size = UDim2.new(0, 477, 0, 37)
 TextLabel_2.Font = Enum.Font.Gotham
 TextLabel_2.Text = "Insert the username [Can be shortened]"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -93,16 +94,16 @@ AntiFlingButton.Name = "AntiFlingButton"
 AntiFlingButton.Parent = Frame
 AntiFlingButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
 AntiFlingButton.BorderSizePixel = 0
-AntiFlingButton.Position = UDim2.new(0.790272593, 0, 0.840326548, 0)
-AntiFlingButton.Size = UDim2.new(0, 92, 0, 33)
+AntiFlingButton.Position = UDim2.new(-0.00267895916, 0, 0.877339602, 0)
+AntiFlingButton.Size = UDim2.new(0, 196, 0, 29)
 AntiFlingButton.Font = Enum.Font.Gotham
-AntiFlingButton.Text = "Anti Fling"
+AntiFlingButton.Text = "Anti Fling [Disable Fling]"
 AntiFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 AntiFlingButton.TextSize = 14.000
 
 -- Scripts:
 
-local function KSJFSO_fake_script() -- TextLabel.RainbowText 
+local function CPEUXS_fake_script() -- TextLabel.RainbowText 
 	local script = Instance.new('Script', TextLabel)
 
 	local text = script.Parent
@@ -158,8 +159,8 @@ local function KSJFSO_fake_script() -- TextLabel.RainbowText
 	end
 	end
 end
-coroutine.wrap(KSJFSO_fake_script)()
-local function SQYD_fake_script() -- FlingButton.LocalScript 
+coroutine.wrap(CPEUXS_fake_script)()
+local function AWGW_fake_script() -- FlingButton.LocalScript 
 	local script = Instance.new('LocalScript', FlingButton)
 
 	function lol()
@@ -230,8 +231,8 @@ local function SQYD_fake_script() -- FlingButton.LocalScript
 		end
 	script.Parent.MouseButton1Click:Connect(lol)
 end
-coroutine.wrap(SQYD_fake_script)()
-local function RCTN_fake_script() -- TextBox.RainbowText 
+coroutine.wrap(AWGW_fake_script)()
+local function SZWTKGX_fake_script() -- TextBox.RainbowText 
 	local script = Instance.new('Script', TextBox)
 
 	local text = script.Parent
@@ -287,8 +288,8 @@ local function RCTN_fake_script() -- TextBox.RainbowText
 	end
 	end
 end
-coroutine.wrap(RCTN_fake_script)()
-local function GMPTO_fake_script() -- Frame.DraggableS 
+coroutine.wrap(SZWTKGX_fake_script)()
+local function OHMSO_fake_script() -- Frame.DraggableS 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -345,8 +346,8 @@ local function GMPTO_fake_script() -- Frame.DraggableS
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(GMPTO_fake_script)()
-local function ENITR_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(OHMSO_fake_script)()
+local function QBDXP_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	function gay()
@@ -356,12 +357,15 @@ local function ENITR_fake_script() -- TextButton.LocalScript
 	end
 	script.Parent.MouseButton1Click:Connect(gay)
 end
-coroutine.wrap(ENITR_fake_script)()
-local function NXPH_fake_script() -- AntiFlingButton.LocalScript 
+coroutine.wrap(QBDXP_fake_script)()
+local function PGWOMU_fake_script() -- AntiFlingButton.LocalScript 
 	local script = Instance.new('LocalScript', AntiFlingButton)
 
 	function gayz()
-	
+		print("AF Enabled - Disabled Fling")
+		script.Parent.Parent.TextBox.Visible = false
+		script.Parent.Parent.FlingButton.Visible = false
+		script.Parent.Parent.TextLabel.Text = "You can't fling anymore [Anti-Fling Enabled]"
 	-- // Constants \\ --
 	-- [ Services ] --
 	local Services = setmetatable({}, {__index = function(Self, Index)
@@ -449,4 +453,16 @@ local function NXPH_fake_script() -- AntiFlingButton.LocalScript
 	
 	script.Parent.MouseButton1Click:Connect(gayz)
 end
-coroutine.wrap(NXPH_fake_script)()
+coroutine.wrap(PGWOMU_fake_script)()
+local function PJOD_fake_script() -- AstroxFling.checkLoaded 
+	local script = Instance.new('LocalScript', AstroxFling)
+
+	local loaded = script.Parent.loaded
+	loaded.Value = true
+	
+	if loaded == true then
+		print("already loaded")
+		script.Parent:Destroy()
+	end
+end
+coroutine.wrap(PJOD_fake_script)()
