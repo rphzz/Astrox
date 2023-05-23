@@ -1,7 +1,52 @@
--- (VOID) : Gui to Lua
--- Version: 1.4
+--[[                                                        
+   ___  _ __   ___ _ __    ___  ___  _   _ _ __ ___ ___ 
+  / _ \| '_ \ / _ \ '_ \  / __|/ _ \| | | | '__/ __/ _ \
+ | (_) | |_) |  __/ | | | \__ \ (_) | |_| | | | (_|  __/
+  \___/| .__/ \___|_| |_| |___/\___/ \__,_|_|  \___\___|
+       | |                                              
+       |_|                                              
 
--- Instances:
+hi skidder, this is a fling gui btw is open source!1!!11
+
+CREDITS
+
+Scripting: Astrox
+GUI: Astrox
+The most beautiful code created in this world: Astrox
+(all by me)
+
+]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 local AstroxFling = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -15,11 +60,10 @@ local TextLabel_2 = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
 local AntiFlingButton = Instance.new("TextButton")
 
---Properties:
-
 AstroxFling.Name = "AstroxFling"
 AstroxFling.Parent = (game:GetService("CoreGui") or gethui())
 AstroxFling.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+AstroxFling.ResetOnSpawn = false
 
 Frame.Parent = AstroxFling
 Frame.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
@@ -103,7 +147,7 @@ AntiFlingButton.TextSize = 14.000
 
 -- Scripts:
 
-local function CPEUXS_fake_script() -- TextLabel.RainbowText 
+local function rainbowTitle() -- TextLabel.RainbowText 
 	local script = Instance.new('Script', TextLabel)
 
 	local text = script.Parent
@@ -159,8 +203,8 @@ local function CPEUXS_fake_script() -- TextLabel.RainbowText
 	end
 	end
 end
-coroutine.wrap(CPEUXS_fake_script)()
-local function AWGW_fake_script() -- FlingButton.LocalScript 
+coroutine.wrap(rainbowTitle)()
+local function flingEnable() -- FlingButton.LocalScript 
 	local script = Instance.new('LocalScript', FlingButton)
 
 	function lol()
@@ -231,8 +275,8 @@ local function AWGW_fake_script() -- FlingButton.LocalScript
 		end
 	script.Parent.MouseButton1Click:Connect(lol)
 end
-coroutine.wrap(AWGW_fake_script)()
-local function SZWTKGX_fake_script() -- TextBox.RainbowText 
+coroutine.wrap(flingEnable)()
+local function rainbowTextBox() -- TextBox.RainbowText 
 	local script = Instance.new('Script', TextBox)
 
 	local text = script.Parent
@@ -288,8 +332,8 @@ local function SZWTKGX_fake_script() -- TextBox.RainbowText
 	end
 	end
 end
-coroutine.wrap(SZWTKGX_fake_script)()
-local function OHMSO_fake_script() -- Frame.DraggableS 
+coroutine.wrap(rainbowTextBox)()
+local function dragScript() -- Frame.DraggableS 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -346,8 +390,8 @@ local function OHMSO_fake_script() -- Frame.DraggableS
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(OHMSO_fake_script)()
-local function QBDXP_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(dragScript)()
+local function close() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	function gay()
@@ -357,8 +401,8 @@ local function QBDXP_fake_script() -- TextButton.LocalScript
 	end
 	script.Parent.MouseButton1Click:Connect(gay)
 end
-coroutine.wrap(QBDXP_fake_script)()
-local function PGWOMU_fake_script() -- AntiFlingButton.LocalScript 
+coroutine.wrap(close)()
+local function antiFling() -- AntiFlingButton.LocalScript 
 	local script = Instance.new('LocalScript', AntiFlingButton)
 
 	function gayz()
@@ -453,16 +497,4 @@ local function PGWOMU_fake_script() -- AntiFlingButton.LocalScript
 	
 	script.Parent.MouseButton1Click:Connect(gayz)
 end
-coroutine.wrap(PGWOMU_fake_script)()
-local function PJOD_fake_script() -- AstroxFling.checkLoaded 
-	local script = Instance.new('LocalScript', AstroxFling)
-
-	local loaded = script.Parent.loaded
-	loaded.Value = true
-	
-	if loaded == true then
-		print("already loaded")
-		script.Parent:Destroy()
-	end
-end
-coroutine.wrap(PJOD_fake_script)()
+coroutine.wrap(antiFling)()
