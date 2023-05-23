@@ -346,9 +346,10 @@ end
 coroutine.wrap(GJUNHEE_fake_script)()
 local function ZNDW_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
-
+    function gay()
 	print("CALLED TO DESTROY AstroxFling GUI ! [workspace.StarterGui.AstroxFling ]")
 	script.Parent.Parent.Parent:Destroy()
+	script.Parent.MouseButton1Click:Connect(gay)
 end
 coroutine.wrap(ZNDW_fake_script)()
 local function LGCU_fake_script() -- AntiFlingButton.LocalScript 
